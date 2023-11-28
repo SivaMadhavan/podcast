@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'app',
     'user',
+    'rest_framework_swagger'
 ]
 
 MIDDLEWARE = [
@@ -150,4 +151,4 @@ import os
 MEDIA_URL = '/media/'  # URL for serving media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Absolute filesystem path to the media directory
 
-
+API_VERSION = config.get('versioning', 'api')
