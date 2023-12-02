@@ -9,11 +9,10 @@ schema_view = get_swagger_view(title='Pastebin API')
 API_VERSION = settings.API_VERSION
 
 urlpatterns = [
-    path(r'^$', schema_view),
+    path(r'', schema_view),
     path('admin/', admin.site.urls),
-    path('api/' + API_VERSION + '/user', include('user.urls')),
-    path('api/' + API_VERSION + '/podcast', include('app.urls')),
-    path('api/' + API_VERSION + '/identity', include('identity.urls')),
+    path('api/' + API_VERSION + '/podcasts/', include('app.urls')),
+    path('api/' + API_VERSION + '/auth/', include('authentication.urls')),
 ]
 
 if settings.DEBUG:
